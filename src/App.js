@@ -1,16 +1,35 @@
-import React from 'react'
-import axios from 'axios'
+import React, { useState, useEffect } from 'react'
+import { getAllData } from './lib/api'
+import PostsCard from './components/PostsCard'
 
-function App() {
-  React.useEffect(() => {
-    const getData = async () => {
-      const res = await axios.get('/api/endpoint') // * <-- replace with your endpoint
-      console.log(res.data)
+const App = () => {
+
+  const [posts, setPosts] = useState([])
+
+  useEffect(() => {
+    async function getData() {
+      const res = await getAllData()
+      const data = await res.data
+      const results = data.data
+      setPosts(results)
     }
     getData()
-  })
+  }, [])
 
-  return <h1>Hello World</h1>
+  console.log(posts)
+
+  return (
+    <div clasName="main-container">
+      <div className="main-title">
+        <h1>BBC NEWS API</h1>
+      </div>
+      <div className="posts">
+        {posts.map((post, index) => 
+          <PostsCard key={index} {...post} />
+        )}
+      </div>
+    </div>
+  )
 }
 
 export default App

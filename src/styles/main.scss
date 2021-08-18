@@ -1,0 +1,80 @@
+/*
+=============== 
+Variables
+===============
+*/
+$bbc-red: #ba0101;
+$bbc-font-white: #ffffff;
+$bbc-font-grey: #7e7e7e;
+$bbc-border: #616161;
+$bbc-inner-border: #7e7e7e;
+$bbc-font: Quicksand;
+$bbc-headings: #161616;
+
+/*
+=============== 
+Global Settings
+===============
+*/
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $bbc-font;
+}
+
+.posts {
+  padding-top: 50px;
+}
+
+.main-title {
+  font-family: $bbc-font;
+  letter-spacing: 0.01em;
+  background-color: $bbc-red;
+  text-align: center;
+  color: white;
+  padding: 40px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.card {
+  background-color: #f9f9f9;
+  width: 80%;
+  height: 300px;
+  margin: 20px;
+  border: 1px solid $bbc-border;
+  border-radius: 10px;
+  transition: transform 600ms;
+  a {
+  text-decoration: none;
+  color: $bbc-headings;
+  }
+  
+}
+
+.topbar {
+  padding: 0.7rem;
+  display: flex;
+}
+
+.avatar {
+  max-width: 50px;
+  border-radius: 50px;
+}
+
+.name {
+  display: flex;
+  font-size: 11px;
+  margin: 0.2rem 1rem;
+}
+
+.firstname {
+  margin: 0 5px;
+}
