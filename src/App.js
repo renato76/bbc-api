@@ -19,9 +19,9 @@ const App = () => {
   console.log(posts)
 
   return (
-    <div clasName="main-container">
+    <div className="main-container">
       <div className="main-title">
-        <h1>BBC NEWS API</h1>
+        <h1>BBC Paws</h1>
       </div>
       <div className="posts">
         {posts.map((post, index) => 
