@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { getAllData, getByTag } from './lib/api'
+import { getAllData } from './lib/api'
 import PostsCard from './components/PostsCard'
 
 function getLocalHistory() {
@@ -11,7 +11,6 @@ function getLocalHistory() {
 
 const App = () => {
   const [posts, setPosts] = useState([])
-  const [search, setSearch] = useState('')
   const [searchHistory, setSearchHistory] = useState(getLocalHistory()) 
 
   const [filterSearchTerm, setFilterSearchTerm] = useState('')
@@ -30,24 +29,21 @@ const App = () => {
     getData()
   }, [])
 
-  async function getSearchData() {
-    // 1. send search with what the user typing
-    const res = await getByTag(search)
-    // 2. set that terms in state
-    setSearchHistory([...searchHistory, search])
-    // 3. state needs to sync with local storage
-    const data = await res.data
-    const results = data.data
-    setPosts(results)
-    setSearch('')
-  }
-
-  console.log(filterSearchTerm)
+  console.log(posts)
 
   // Create a filter search function that will filter the results based on the search term 
   // entered by the user
+
+  // TODO: I am now able to search for keywords within the descriptions, now I also need to search by user and tags
   const handleFilterSearch = () => {
     console.log(filterSearchTerm, 'being clicked')
+    const filteredItems = posts.filter(item => {
+      return Object.keys(item).some(key => {
+        return item[key].toString().toLowerCase().includes(filterSearchTerm)
+      })
+    })
+    setPosts(filteredItems)
+    setSearchHistory([...searchHistory, filterSearchTerm])
   }
 
   return (
@@ -55,30 +51,6 @@ const App = () => {
       <div className="main-title">
         <h1>BBC Blog</h1>
       </div>
-      <div className="input-tags">
-        <input 
-          value={search}
-          onChange={(e) => { 
-            setSearch(e.target.value) 
-          }}
-        />
-        <button
-          onClick={getSearchData}
-        >Search
-        </button>
-        <div>
-          {searchHistory.map(term => {
-            return (
-              <button 
-                key={term.id}
-              >{term}
-              </button>)
-          })}
-        </div>
-        <div>
-          <button onClick={() => setSearchHistory([])}>Clear Search</button>
-        </div>
-      </div> 
       {/* create a search input that takes in event target value */}
       <div className="input-container">
         <input 
@@ -95,6 +67,19 @@ const App = () => {
         >
           Search
         </button>
+      </div>
+      <div>
+        {searchHistory.map(term => {
+          return (
+            <button 
+              key={term.id}
+            >{term}
+            </button>)
+        })}
+      </div>
+      {/* TODO: Create styles for this section - the search terms need to be much clearer */}
+      <div>
+        <button onClick={() => setSearchHistory([])}>Clear Search</button>
       </div>
       <div className="posts">
         {posts.map((post, index) => 
