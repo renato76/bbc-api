@@ -3,7 +3,6 @@ import moment from 'moment'
 
 const PostsCard = (props) => {
   const { owner, tags, publishDate, image, text } = props
-  console.log(props)
   const tag1 = tags[0]
   const tag2 = tags[1]
   const tag3 = tags[2]
