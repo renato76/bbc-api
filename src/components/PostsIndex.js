@@ -77,7 +77,7 @@ export const PostsIndex = () => {
   return (
     <div className="main-container">
       <div className="main-title">
-        <h1>BBC Blog</h1>
+        <h1>BBC Paws</h1>
       </div>
       {/* create a search input that takes in event target value */}
       <div className="input-container">

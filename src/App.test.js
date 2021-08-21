@@ -10,5 +10,5 @@ test('renders link to homepage', () => {
       <App />
     </Router>
   )
-  expect(screen.getByText(/bbc blog/i)).toBeInTheDocument()
+  expect(screen.getByText(/bbc paws/i)).toBeInTheDocument()
 })
