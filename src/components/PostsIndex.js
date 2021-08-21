@@ -30,7 +30,6 @@ export const PostsIndex = () => {
   }, [])
 
   console.log(posts)
-
   // Create a filter search function that will filter the results based on the search term 
   // entered by the user
 
