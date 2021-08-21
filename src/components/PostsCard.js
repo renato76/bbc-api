@@ -26,7 +26,7 @@ const PostsCard = (props) => {
               </div>
             </div>
             <div className="publish-date">
-              <h2>{moment(publishDate).format('Do MMM YY HH:mm:ss')}</h2>
+              <h2>{moment(publishDate).format('Do MMM YY HH:mm')}</h2>
             </div>
           </div>
         </div>

@@ -86,7 +86,7 @@ const App = () => {
       </div>
       {loading && <h4>Loading...</h4>}
       {!loading && <div className="search-tags">
-        <h4>Filtered By: </h4>
+        {searchHistory.length > 0 && <h4>Filtered By: </h4> }
         {searchHistory.map(term => {
           return (
             <>
@@ -101,6 +101,7 @@ const App = () => {
       </div>
       }
       {/* TODO: Create styles for this section - the search terms need to be much clearer */}
+      { searchHistory.length > 0 && 
       <div className="clear-search">
         <>
           <button 
@@ -110,6 +111,7 @@ const App = () => {
           </button>
         </>
       </div>
+      }
       <div className="posts">
         {posts.map((post, index) => 
           <PostsCard key={index} {...post} />
