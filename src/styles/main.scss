@@ -1,20 +1,5 @@
 /*
 =============== 
-Variables
-===============
-*/
-$bbc-red: #ba0101;
-$bbc-purple: #290c63;
-$bbc-fuchsia: #e4007e;
-$bbc-font-white: #ffffff;
-$bbc-font-grey: #7e7e7e;
-$bbc-border: #9d9d9d;
-$bbc-inner-border: #7e7e7e;
-$bbc-font: Quicksand;
-$bbc-headings: #161616;
-
-/*
-=============== 
 Global Settings
 ===============
 */
@@ -24,7 +9,7 @@ Global Settings
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: $bbc-font;
+  font-family: Quicksand;
 }
 
 .posts {
@@ -32,7 +17,7 @@ Global Settings
 }
 
 .main-title {
-  font-family: $bbc-font;
+  font-family: Quicksand;
   letter-spacing: 0.01em;
   background-color: #290c63;
   text-align: center;
@@ -56,7 +41,7 @@ Global Settings
   border-right: 1px solid #cecece;
   a {
   text-decoration: none;
-  color: $bbc-headings;
+  color: #161616;
   }
 }
 
@@ -162,7 +147,7 @@ Global Settings
   padding: 4px;
   margin: 5px;
   width: 60px;
-  background-color: $bbc-fuchsia;
+  background-color: #e4007e;
   color: white;
   border: none;
   border-radius: 5px;

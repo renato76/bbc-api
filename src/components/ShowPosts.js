@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 
-const PostsCard = (props) => {
+const ShowPosts = (props) => {
   const { owner, tags, publishDate, image, text } = props
   const tag1 = tags[0]
   const tag2 = tags[1]
@@ -11,7 +11,7 @@ const PostsCard = (props) => {
       <div className="card">
         <div className="topbar">
           <div className="avatar-container">
-            <img className="avatar" src={owner.picture} />
+            <img alt="profile-picture" className="avatar" src={owner.picture} />
           </div>
           <div className="name-date-container">
             <div className="name">
@@ -32,7 +32,7 @@ const PostsCard = (props) => {
         </div>
         <div className="post-container">
           <div className="post-image-container">
-            <img className="post-image" src={image} />
+            <img alt="post-image" className="post-image" src={image} />
           </div>
           <div className="post-info">
             <div className="post-info-text">
@@ -56,4 +56,4 @@ const PostsCard = (props) => {
   )
 }
 
-export default PostsCard
+export default ShowPosts
