@@ -32,7 +32,7 @@ export const PostsShow = (props) => {
         </div>
         <div className="post-container">
           <div className="post-image-container">
-            <img alt="post-image" className="post-image" src={image} />
+            <img data-testid="image-alt" alt="post-image" className="post-image" src={image} />
           </div>
           <div className="post-info">
             <div className="post-info-text">

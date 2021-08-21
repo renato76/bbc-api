@@ -74,6 +74,7 @@ export const PostsIndex = () => {
         <input 
           aria-label="search-input"
           type="text"
+          data-cy="input"
           className="search-input"
           value={filterSearchTerm}
           placeholder="filter results"
@@ -84,6 +85,7 @@ export const PostsIndex = () => {
         {/* The button needs an onClick which calls a function in which I need to filter the results */}
         <button
           aria-label="filter-search"
+          data-cy="submit"
           onClick={handleFilterSearch}
           className="search-button"
         >
@@ -118,6 +120,7 @@ export const PostsIndex = () => {
             aria-label="clear-search"
             onClick={() => resetPage() }
             className="clear-search-button"
+            data-cy="clear-all"
           >Clear Search
           </button>
         </>
