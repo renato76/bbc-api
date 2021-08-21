@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 
-const ShowPosts = (props) => {
+export const PostsShow = (props) => {
   const { owner, tags, publishDate, image, text } = props
   const tag1 = tags[0]
   const tag2 = tags[1]
@@ -56,4 +56,4 @@ const ShowPosts = (props) => {
   )
 }
 
-export default ShowPosts
+export default PostsShow
