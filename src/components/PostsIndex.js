@@ -14,6 +14,7 @@ export const PostsIndex = () => {
   const [searchHistory, setSearchHistory] = useState(getLocalHistory()) 
   const [filterSearchTerm, setFilterSearchTerm] = useState('')
   const [loading, setLoading] = useState(false)
+  const [searchTermEntered, setSearchTermEntered] = useState(true)
 
   useEffect(() => {
     localStorage.setItem('search-history', searchHistory)
@@ -29,17 +30,21 @@ export const PostsIndex = () => {
     getData()
   }, [])
 
-  console.log(posts)
   // Create a filter search function that will filter the results based on the search term 
   // entered by the user
 
   // TODO: I am now able to search for keywords within the descriptions, now I also need to search by user and tags
   // To search by owner I need to search one more level deep, so I need to add anoter filter below
   const handleFilterSearch = () => {
-    setLoading(true)
+    if (!filterSearchTerm) {
+      // console.log('please enter a term!')
+      setSearchTermEntered(false)
+    }
+    
     // console.log(filterSearchTerm, 'being clicked')
     if (filterSearchTerm) {
-      
+      setLoading(true)
+      setSearchTermEntered(true)
       const filteredItems = posts.filter(item => {
         // console.log(Object.keys(item))
         return Object.keys(item).some(key => {
@@ -63,6 +68,12 @@ export const PostsIndex = () => {
     setLoading(false)
   }
 
+  const handleKeypress = e => {
+    if (e.keyCode === 13 || e.key === 'Enter') {
+      handleFilterSearch()
+    }
+  }
+
   return (
     <div className="main-container">
       <div className="main-title">
@@ -77,12 +88,14 @@ export const PostsIndex = () => {
           className="search-input"
           value={filterSearchTerm}
           placeholder="filter results"
+          onKeyPress={handleKeypress}
           onChange={(e) => { 
             setFilterSearchTerm(e.target.value) 
           }}
         />
         {/* The button needs an onClick which calls a function in which I need to filter the results */}
         <button
+          type="submit"
           aria-label="filter-search"
           data-cy="submit"
           onClick={handleFilterSearch}
@@ -91,6 +104,11 @@ export const PostsIndex = () => {
           Search
         </button>
       </div>
+      {!searchTermEntered && 
+        <div className="search-tags">
+          <h4>Please enter a term</h4>
+        </div>
+      }
       {loading && 
       <div className="search-tags">
         <h4>Loading...</h4>
@@ -102,6 +120,7 @@ export const PostsIndex = () => {
           return (
             <>
               <button 
+                type="submit"
                 key={term.id}
                 className="search-tags-button"
               >{term}
@@ -116,6 +135,7 @@ export const PostsIndex = () => {
       <div className="clear-search">
         <>
           <button 
+            type="submit"
             aria-label="clear-search"
             onClick={() => resetPage() }
             className="clear-search-button"
@@ -126,8 +146,8 @@ export const PostsIndex = () => {
       </div>
       }
       <div className="posts">
-        {posts.map((post, index) => 
-          <PostsShow key={index} {...post} />
+        {posts.map(post => 
+          <PostsShow key={post.id} {...post} />
         )}
       </div>
     </div>
