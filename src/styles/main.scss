@@ -4,6 +4,8 @@ Variables
 ===============
 */
 $bbc-red: #ba0101;
+$bbc-purple: #290c63;
+$bbc-fuchsia: #e4007e;
 $bbc-font-white: #ffffff;
 $bbc-font-grey: #7e7e7e;
 $bbc-border: #9d9d9d;
@@ -47,15 +49,15 @@ Global Settings
 .card {
   background-color: #f9f9f9;
   width: 90%;
-
   margin: 20px;
   border-radius: 10px;
-  transition: transform 600ms;
+  border-left: 1px solid #cecece;
+  border-bottom: 1px solid #cecece;
+  border-right: 1px solid #cecece;
   a {
   text-decoration: none;
   color: $bbc-headings;
   }
-  
 }
 
 .topbar {
@@ -86,13 +88,10 @@ Global Settings
   margin: 0.2rem 1rem;
 }
 
-
-
 .post-container {
   display: flex;
   width: 100%;
 }
-
 
 .post-info {
   width: 50%;
@@ -149,6 +148,25 @@ Global Settings
 .input-container {
   display: flex;
   justify-content: center;
+  margin: 20px;
+}
+
+.search-tags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.search-tags-button {
+  padding: 4px;
+  margin: 5px;
+  width: 60px;
+  background-color: $bbc-fuchsia;
+  color: white;
+  border: none;
+  border-radius: 5px;
+
 }
 
 .search-input {
@@ -156,4 +174,43 @@ Global Settings
   padding: 10px;
   border: 1px solid #290c63;
   margin: 0 10px;
+}
+
+.clear-search {
+  display: flex;
+  justify-content: center;
+}
+
+.clear-search-button,
+.search-button {
+  width: 100px;
+  border: 1px solid black;
+  padding: 4px;
+}
+.clear-search-button,
+.search-button:hover {
+  cursor: pointer;
+}
+
+// Tablet Styles 
+@media (min-width: 768px) {
+  .posts {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .card-container {
+    display: flex;
+    width: 50%;
+  }
+}
+
+@media (min-width: 1281px) {
+  .posts {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .card-container {
+    display: flex;
+    width: 33%;
+  }
 }
