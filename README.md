@@ -29,5 +29,28 @@ It will initially launch a pop upo window which should contain a link called "to
 Clicking that will start the cypress test which will open up a browser windiw and run the test.
 
 
+## **My Approach:** 
 
+* Use create react app
+* Build mobile first, then extend to laptops and larger screens
+* Used single stylesheet for ease 
+* Add some unit tests
+* Add some E2E Testing 
+
+
+
+## **Challenges:** 
+
+Filtering data as per requirements was challenging. I managed to eventually get it to filter results based on words contained in the post decriptions. 
+
+It would be great to also be able to filter by tags and by user first names etc.
+
+
+## **Wins:** 
+
+We do have some search functionality which is good.
+
+Displaying each user search term was good, I would also like to add functionality that re runs that search onClick, I think given a bit more time this would not be difficult. 
+
+I am happy with the UI in general and with getting some unit tests and cypress end 2 end test to work.
 
