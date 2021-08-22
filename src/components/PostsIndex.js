@@ -88,6 +88,7 @@ export const PostsIndex = () => {
           className="search-input"
           value={filterSearchTerm}
           placeholder="filter results"
+          data-testid="filter"
           onKeyPress={handleKeypress}
           onChange={(e) => { 
             setFilterSearchTerm(e.target.value) 
