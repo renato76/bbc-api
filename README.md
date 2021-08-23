@@ -2,8 +2,10 @@
 
 BBC API Demo
 
+## Live Version
+http://bbc-api.s3-website.eu-west-2.amazonaws.com/
 
-## Instructions
+## Instructions to run locally
 
 To get started:
 * Install dependencies `npm i`
