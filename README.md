@@ -33,10 +33,9 @@ Clicking that will start the cypress test which will open up a browser windiw an
 
 * Use create react app
 * Build mobile first, then extend to laptops and larger screens
-* Used single stylesheet for ease 
+* Accessibility considerations
 * Add some unit tests
 * Add some E2E Testing 
-
 
 
 ## **Challenges:** 
@@ -48,7 +47,11 @@ It would be great to also be able to filter by tags and by user first names etc.
 
 ## **Wins:** 
 
-We do have some search functionality which is good.
+We do have some search functionality which works well.
+
+Accessibility considerations include: Fonts, colours, alt text for images, aria labels for inputs, keyboard only considerations.
+
+I also tested this using a keyboard and was able to run a search and clear items to start over. 
 
 Displaying each user search term was good, I would also like to add functionality that re runs that search onClick, I think given a bit more time this would not be difficult. 
 
