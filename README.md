@@ -25,8 +25,8 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 ### `npm run cy:open`
 
 This launches Cypress End-to-End testing
-It will initially launch a pop upo window which should contain a link called "todo.spec.js"
-Clicking that will start the cypress test which will open up a browser windiw and run the test.
+It will initially launch a pop up window which should contain a link called "todo.spec.js"
+Clicking that will start the cypress test which will open up a browser window and run the test.
 
 
 ## **My Approach:** 
@@ -40,9 +40,9 @@ Clicking that will start the cypress test which will open up a browser windiw an
 
 ## **Challenges:** 
 
-Filtering data as per requirements was challenging. I managed to eventually get it to filter results based on words contained in the post decriptions. 
+Filtering data as per requirements was challenging. I managed to eventually get it to filter results based on words contained in the post decriptions and tags. 
 
-It would be great to also be able to filter by tags and by user first names etc.
+It would be great to also be able to filter by user first names etc.
 
 
 ## **Wins:** 
