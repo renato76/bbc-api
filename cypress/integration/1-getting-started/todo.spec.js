@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /// <reference types="cypress" />
 
-describe('example to-do app', () => {
+describe('bbc api', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000')
   })
@@ -12,7 +12,7 @@ describe('example to-do app', () => {
   // results should return only 3 posts that contain the word puppy in the description
   // 3. Then clicks on the clear search button which should clear filters and return all the data again
 
-  it('displays all the posts', () => {
+  it('filters results based on search term', () => {
     cy.wait(1000)
     cy.get('[data-cy=input]').first().type('puppy')
     cy.get('[data-cy=submit]').click()
