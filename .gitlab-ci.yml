@@ -39,7 +39,8 @@ unit-test-job:   # This job runs in the test stage.
     - npm ci
     - npm run test
 
-e2e-test-job:   # This job runs in the test stage.
+e2e-test-job: 
+  image: cypress/browsers:node12.14.1-chrome85-ff81  # This job runs in the test stage.
   stage: test    # It only starts when the job in the build stage completes successfully.
   script:
     - npm ci
