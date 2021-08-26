@@ -16,7 +16,7 @@ export const PostsShow = (props) => {
           <div className="name-date-container">
             <div className="name">
               <div className="title">
-                <h2>{owner.title}</h2>
+                <h2 data-testid="owner-title">{owner.title}</h2>
               </div>
               <div className="firstname">
                 <h2>{owner.firstName}</h2>

@@ -59,13 +59,13 @@ export const PostsIndex = () => {
   }
 
   async function resetPage() {
-    // setLoading(true)
+    setLoading(true)
     setSearchHistory([])
-    // const res = await getAllData('')
-    // const data = await res.data
-    // const results = data.data
-    // setPosts(results)
-    // setLoading(false)
+    const res = await getAllData('')
+    const data = await res.data
+    const results = data.data
+    setPosts(results)
+    setLoading(false)
   }
 
   const handleKeypress = e => {
