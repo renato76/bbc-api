@@ -23,7 +23,7 @@ stages:          # List of stages for jobs, and their order of execution
 build-job:       # This job runs in the build stage, which runs first.
   stage: build
   script:
-    - npm install
+    - npm ci
     - echo "Compiling the code..."
     - npm run build
   artifacts:
@@ -36,8 +36,15 @@ build-job:       # This job runs in the build stage, which runs first.
 unit-test-job:   # This job runs in the test stage.
   stage: test    # It only starts when the job in the build stage completes successfully.
   script:
-    - npm install
+    - npm ci
     - npm run test
+
+e2e-test-job:   # This job runs in the test stage.
+  stage: test    # It only starts when the job in the build stage completes successfully.
+  script:
+    - npm ci
+    - npm start &
+    - npm run cy:run
 
 
 deploy-job:      # This job runs in the deploy stage.
